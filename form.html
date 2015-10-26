@@ -1,0 +1,1539 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content="">
+    <meta name="author" content="">
+
+    <title>form</title>
+
+    <!-- Bootstrap Core CSS -->
+    <link href="bower_components/bootstrap/dist/css/bootstrap.min.css" rel="stylesheet">
+
+    <!-- MetisMenu CSS -->
+    <link href="bower_components/metisMenu/dist/metisMenu.min.css" rel="stylesheet">
+
+    <!-- Timeline CSS -->
+    <link href="dist/css/timeline.css" rel="stylesheet">
+
+    <!-- Custom CSS -->
+    <link href="dist/css/sb-admin-2.css" rel="stylesheet">
+
+    <link href="widget-override.css" rel="stylesheet">
+
+    <!-- Morris Charts CSS -->
+    <link href="bower_components/morrisjs/morris.css" rel="stylesheet">
+
+    <!-- Custom Fonts -->
+    <link href="bower_components/font-awesome/css/font-awesome.min.css" rel="stylesheet" type="text/css">
+
+    <link href="http://affiliate.thestoreinternal.com/css/plugins/affiliate/widget.css" rel="stylesheet">
+
+    <link rel="stylesheet" type="text/css" href="http://affiliate.thestoreinternal.com/css/plugins/bootstrap/bootstrap-multiselect.css">
+
+    <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
+    <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
+    <!--[if lt IE 9]>
+            <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
+            <script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
+        <![endif]-->
+
+    <style>
+        .form-group {
+            border-bottom: 1px solid #ccc;
+        }
+
+        .toggled-content {
+            display: none;
+            position: relative;
+            top: -15px;
+        }
+
+        .toggled-content .col-xs-6 {
+            padding-top: 0;
+            padding-bottom: 0;
+        }
+
+        .toggled-content.toggled {
+            display: block;
+        }
+
+        .btn-change {
+            position: relative;
+            top: -8px;
+        }
+
+        .well {
+            margin-bottom: 0;
+        }
+
+        .cats-dropdown,
+        .retailers-dropdown {
+            position: relative;
+            width: 100%;
+            font-size: 12px;
+            line-height: 1;
+            margin-bottom: -35px !important;
+        }
+
+        .categories h3,
+        .retailers-menu h3 {
+            margin-top: 0;
+            margin-bottom: 0;
+        }
+
+        .categories .btn-group,
+        .retailers-menu .btn-group,
+        .categories .multiselect,
+        .retailers-menu .multiselect {
+            width: 100%;
+        }
+
+        .cats-dropdown li a label,
+        .cats-dropdown li.multiselect-item label,
+        .retailers-dropdown li a label,
+        .retailers-dropdown li.multiselect-item label {
+            display: -webkit-box;
+            display: -ms-flexbox;
+            display: -webkit-flex;
+            display: flex;
+            -webkit-box-align: center;
+            -webkit-flex-align: center;
+            -ms-flex-align: center;
+            -webkit-align-items: center;
+            align-items: center;
+            padding: 0px 20px 0px 40px !important;
+            min-height: 20px !important;
+        }
+
+        .cats-dropdown li.multiselect-item label,
+        .retailers-dropdown li.multiselect-item label {
+            padding-left: 20px !important;
+            font-size: 14px;
+            text-decoration: underline;
+        }
+
+        .form-group.categories .btn-group,
+        .form-group.retailers-menu .btn-group {
+            position: relative;
+            top: -10px;
+            margin-bottom: -5px;
+        }
+
+        .cats-dropdown,
+        .retailers-dropdown {
+            border: none;
+            box-shadow: none;
+        }
+
+        .multiselect span {
+            max-width: 95%;
+            height: 15px;
+            display: inline-block;
+            text-overflow: ellipsis;
+            white-space: nowrap;
+            overflow: hidden;
+        }
+
+        h3 {
+            font-size: 18px;
+        }
+
+        .col-xs-4.text-right {
+            padding-bottom: 0;
+        }
+
+        .productbox {
+            margin: 0 auto;
+        }
+
+        .toggled-content .radio label {
+            display: inline-block;
+            width: 100%;
+            border-radius: 3px;
+        }
+
+        @media only screen and (min-width: 640px) and (max-width: 1420px) {
+            .col-md-4.col-sm-6.col-xs-12   {
+                width: 50% !important;
+            }
+        }
+
+        .preview > .row {
+            width: 100%;
+            max-width: 960px;
+            margin: 0 auto;
+        }
+    </style>
+
+</head>
+
+<body>
+   <input type="text" pattern="[0-9]*">
+    <div class="row" style="margin: 0 !important;">
+        <div class="col-xs-12 col-md-4 col-lg-3">
+            <div class="panel panel-default">
+                <div class="panel-heading">
+                    <h2 style="margin: 0;">Customize your widget</h2></div>
+                <div class="panel-body">
+                    <div class="form-group main-bg">
+                        <div class="row">
+                            <div class="col-xs-8">
+                                <h3 style="margin-top: 0">Main Background</h3></div>
+                            <div class="col-xs-4 text-right">
+                                <button class="btn-change btn btn-default">Change</button>
+                            </div>
+                        </div>
+                        <div class="toggled-content">
+                            <div class="row">
+                                <div class="col-lg-4 col-xs-6">
+                                    <div class="radio">
+                                        <label style="background: rgba(255, 255, 255, 1);">
+                                            <input type="radio" name="color1" value="rgba(255, 255, 255, 1)">white
+                                        </label>
+                                    </div>
+                                    <div class="radio">
+                                        <label style="background: rgba(240, 248, 255, 1);">
+                                            <input type="radio" name="color1" value="rgba(240, 248, 255, 1)">aliceblue
+                                        </label>
+                                    </div>
+                                    <div class="radio">
+                                        <label style="background: rgba(250, 235, 215, 1);">
+                                            <input type="radio" name="color1" value="rgba(250, 235, 215, 1)">antiquewhite
+                                        </label>
+                                    </div>
+                                    <div class="radio">
+                                        <label style="background: rgba(127, 255, 212, 1);">
+                                            <input type="radio" name="color1" value="rgba(127, 255, 212, 1)">aquamarine
+                                        </label>
+                                    </div>
+                                    <div class="radio">
+                                        <label style="background: rgba(255, 235, 205, 1);">
+                                            <input type="radio" name="color1" value="rgba(255, 235, 205, 1)">blanchedalmond
+                                        </label>
+                                    </div>
+                                </div>
+                                <div class="col-lg-4 col-xs-6">
+                                    <div class="radio">
+                                        <label style="background: rgba(108, 123, 139, 1);">
+                                            <input type="radio" name="color1" value="rgba(108, 123, 139, 1)">grey
+                                        </label>
+                                    </div>
+                                    <div class="radio">
+                                        <label style="background: rgba(95, 158, 160, 1);">
+                                            <input type="radio" name="color1" value="rgba(95, 158, 160, 1)">cadetblue
+                                        </label>
+                                    </div>
+                                    <div class="radio">
+                                        <label style="background: rgba(255, 127, 80, 1);">
+                                            <input type="radio" name="color1" value="rgba(255, 127, 80, 1)">coral
+                                        </label>
+                                    </div>
+                                    <div class="radio">
+                                        <label style="background: rgba(233, 150, 122, 1);">
+                                            <input type="radio" name="color1" value="rgba(233, 150, 122, 1)">darksalmon
+                                        </label>
+                                    </div>
+                                    <div class="radio">
+                                        <label style="background: rgba(0, 191, 255, 1);">
+                                            <input type="radio" name="color1" value="rgba(0, 191, 255, 1)">deepskyblue
+                                        </label>
+                                    </div>
+                                </div>
+                                <div class="col-lg-4 col-xs-6">
+                                    <div class="radio">
+                                        <label style="background: rgba(173, 255, 47, 1);">
+                                            <input type="radio" name="color1" value="rgba(173, 255, 47, 1)">greenyellow
+                                        </label>
+                                    </div>
+                                    <div class="radio">
+                                        <label style="background: rgba(144, 238, 144, 1);">
+                                            <input type="radio" name="color1" value="rgba(144, 238, 144, 1)">lightgreen
+                                        </label>
+                                    </div>
+                                    <div class="radio">
+                                        <label style="background: rgba(255, 228, 225, 1);">
+                                            <input type="radio" name="color1" value="rgba(255, 228, 225, 1)">mistyrose
+                                        </label>
+                                    </div>
+                                    <div class="radio">
+                                        <label style="background: rgba(147, 112, 219, 1);">
+                                            <input type="radio" name="color1" value="rgba(147, 112, 219, 1)">mediumpurple
+                                        </label>
+                                    </div>
+                                    <div class="radio">
+                                        <label style="background: rgba(0, 0, 0, 1);">
+                                            <input type="radio" name="color1" value="rgba(173, 255, 47, 1)">black
+                                        </label>
+                                    </div>
+                                </div>
+                            </div>
+                            <label>Or type your own value (color name or hex value):</label>
+                            <input class="form-control custom-bg">
+                        </div>
+                    </div>
+                    <div class="form-group event">
+                        <div class="row">
+                            <div class="col-xs-8">
+                                <h3 style="margin-top: 0">Event Name</h3></div>
+                            <div class="col-xs-4 text-right">
+                                <button class="btn-change btn btn-default">Change</button>
+                            </div>
+                        </div>
+                        <div class="toggled-content">
+                            <div class="row">
+                                <div class="col-lg-4 col-xs-6">
+                                    <div class="radio">
+                                        <label style="background: rgba(255, 255, 255, 1);">
+                                            <input type="radio" name="color2" value="rgba(255, 255, 255, 1)">white
+                                        </label>
+                                    </div>
+                                    <div class="radio">
+                                        <label style="background: rgba(240, 248, 255, 1);">
+                                            <input type="radio" name="color2" value="rgba(240, 248, 255, 1)">aliceblue
+                                        </label>
+                                    </div>
+                                    <div class="radio">
+                                        <label style="background: rgba(250, 235, 215, 1);">
+                                            <input type="radio" name="color2" value="rgba(250, 235, 215, 1)">antiquewhite
+                                        </label>
+                                    </div>
+                                    <div class="radio">
+                                        <label style="background: rgba(127, 255, 212, 1);">
+                                            <input type="radio" name="color2" value="rgba(127, 255, 212, 1)">aquamarine
+                                        </label>
+                                    </div>
+                                    <div class="radio">
+                                        <label style="background: rgba(255, 235, 205, 1);">
+                                            <input type="radio" name="color2" value="rgba(255, 235, 205, 1)">blanchedalmond
+                                        </label>
+                                    </div>
+                                </div>
+                                <div class="col-lg-4 col-xs-6">
+                                    <div class="radio">
+                                        <label style="background: rgba(108, 123, 139, 1);">
+                                            <input type="radio" name="color2" value="rgba(108, 123, 139, 1)">grey
+                                        </label>
+                                    </div>
+                                    <div class="radio">
+                                        <label style="background: rgba(95, 158, 160, 1);">
+                                            <input type="radio" name="color2" value="rgba(95, 158, 160, 1)">cadetblue
+                                        </label>
+                                    </div>
+                                    <div class="radio">
+                                        <label style="background: rgba(255, 127, 80, 1);">
+                                            <input type="radio" name="color2" value="rgba(255, 127, 80, 1)">coral
+                                        </label>
+                                    </div>
+                                    <div class="radio">
+                                        <label style="background: rgba(233, 150, 122, 1);">
+                                            <input type="radio" name="color2" value="rgba(233, 150, 122, 1)">darksalmon
+                                        </label>
+                                    </div>
+                                    <div class="radio">
+                                        <label style="background: rgba(0, 191, 255, 1);">
+                                            <input type="radio" name="color2" value="rgba(0, 191, 255, 1)">deepskyblue
+                                        </label>
+                                    </div>
+                                </div>
+                                <div class="col-lg-4 col-xs-6">
+                                    <div class="radio">
+                                        <label style="background: rgba(173, 255, 47, 1);">
+                                            <input type="radio" name="color2" value="rgba(173, 255, 47, 1)">greenyellow
+                                        </label>
+                                    </div>
+                                    <div class="radio">
+                                        <label style="background: rgba(144, 238, 144, 1);">
+                                            <input type="radio" name="color2" value="rgba(144, 238, 144, 1)">lightgreen
+                                        </label>
+                                    </div>
+                                    <div class="radio">
+                                        <label style="background: rgba(255, 228, 225, 1);">
+                                            <input type="radio" name="color2" value="rgba(255, 228, 225, 1)">mistyrose
+                                        </label>
+                                    </div>
+                                    <div class="radio">
+                                        <label style="background: rgba(147, 112, 219, 1);">
+                                            <input type="radio" name="color2" value="rgba(147, 112, 219, 1)">mediumpurple
+                                        </label>
+                                    </div>
+                                    <div class="radio">
+                                        <label style="background: rgba(0, 0, 0, 1);">
+                                            <input type="radio" name="color2" value="rgba(173, 255, 47, 1)">black
+                                        </label>
+                                    </div>
+                                </div>
+                            </div>
+                            <label>Select font size (px):</label>
+                            <select class="form-control font-size">
+                                <option>10</option>
+                                <option>11</option>
+                                <option>12</option>
+                                <option>13</option>
+                                <option selected>14</option>
+                                <option>15</option>
+                                <option>16</option>
+                                <option>17</option>
+                                <option>18</option>
+                                <option>19</option>
+                                <option>20</option>
+                            </select>
+                        </div>
+                    </div>
+                    <div class="form-group retailer">
+                        <div class="row">
+                            <div class="col-xs-8">
+                                <h3 style="margin-top: 0">Retailer Name</h3>
+                            </div>
+                            <div class="col-xs-4 text-right">
+                                <button type="button" class="btn-change btn btn-default">Change</button>
+                            </div>
+                        </div>
+                        <div class="toggled-content">
+                            <div class="row">
+                                <div class="col-lg-4 col-xs-6">
+                                    <div class="radio">
+                                        <label style="background: rgba(255, 255, 255, 1);">
+                                            <input type="radio" name="color3" value="rgba(255, 255, 255, 1)">white
+                                        </label>
+                                    </div>
+                                    <div class="radio">
+                                        <label style="background: rgba(240, 248, 255, 1);">
+                                            <input type="radio" name="color3" value="rgba(240, 248, 255, 1)">aliceblue
+                                        </label>
+                                    </div>
+                                    <div class="radio">
+                                        <label style="background: rgba(250, 235, 215, 1);">
+                                            <input type="radio" name="color3" value="rgba(250, 235, 215, 1)">antiquewhite
+                                        </label>
+                                    </div>
+                                    <div class="radio">
+                                        <label style="background: rgba(127, 255, 212, 1);">
+                                            <input type="radio" name="color3" value="rgba(127, 255, 212, 1)">aquamarine
+                                        </label>
+                                    </div>
+                                    <div class="radio">
+                                        <label style="background: rgba(255, 235, 205, 1);">
+                                            <input type="radio" name="color3" value="rgba(255, 235, 205, 1)">blanchedalmond
+                                        </label>
+                                    </div>
+                                </div>
+                                <div class="col-lg-4 col-xs-6">
+                                    <div class="radio">
+                                        <label style="background: rgba(108, 123, 139, 1);">
+                                            <input type="radio" name="color3" value="rgba(108, 123, 139, 1)">grey
+                                        </label>
+                                    </div>
+                                    <div class="radio">
+                                        <label style="background: rgba(95, 158, 160, 1);">
+                                            <input type="radio" name="color3" value="rgba(95, 158, 160, 1)">cadetblue
+                                        </label>
+                                    </div>
+                                    <div class="radio">
+                                        <label style="background: rgba(255, 127, 80, 1);">
+                                            <input type="radio" name="color3" value="rgba(255, 127, 80, 1)">coral
+                                        </label>
+                                    </div>
+                                    <div class="radio">
+                                        <label style="background: rgba(233, 150, 122, 1);">
+                                            <input type="radio" name="color3" value="rgba(233, 150, 122, 1)">darksalmon
+                                        </label>
+                                    </div>
+                                    <div class="radio">
+                                        <label style="background: rgba(0, 191, 255, 1);">
+                                            <input type="radio" name="color3" value="rgba(0, 191, 255, 1)">deepskyblue
+                                        </label>
+                                    </div>
+                                </div>
+                                <div class="col-lg-4 col-xs-6">
+                                    <div class="radio">
+                                        <label style="background: rgba(173, 255, 47, 1);">
+                                            <input type="radio" name="color3" value="rgba(173, 255, 47, 1)">greenyellow
+                                        </label>
+                                    </div>
+                                    <div class="radio">
+                                        <label style="background: rgba(144, 238, 144, 1);">
+                                            <input type="radio" name="color3" value="rgba(144, 238, 144, 1)">lightgreen
+                                        </label>
+                                    </div>
+                                    <div class="radio">
+                                        <label style="background: rgba(255, 228, 225, 1);">
+                                            <input type="radio" name="color3" value="rgba(255, 228, 225, 1)">mistyrose
+                                        </label>
+                                    </div>
+                                    <div class="radio">
+                                        <label style="background: rgba(147, 112, 219, 1);">
+                                            <input type="radio" name="color3" value="rgba(147, 112, 219, 1)">mediumpurple
+                                        </label>
+                                    </div>
+                                    <div class="radio">
+                                        <label style="background: rgba(0, 0, 0, 1);">
+                                            <input type="radio" name="color3" value="rgba(173, 255, 47, 1)">black
+                                        </label>
+                                    </div>
+                                </div>
+                            </div>
+                            <label>Select font size (px):</label>
+                            <select class="form-control font-size">
+                                <option>10</option>
+                                <option selected>11</option>
+                                <option>12</option>
+                                <option>13</option>
+                                <option>14</option>
+                                <option>15</option>
+                                <option>16</option>
+                                <option>17</option>
+                                <option>18</option>
+                                <option>19</option>
+                                <option>20</option>
+                            </select>
+                        </div>
+                    </div>
+                    <div class="form-group overlay">
+                        <div class="row">
+                            <div class="col-xs-8">
+                                <h3 style="margin-top: 0">Text overlay</h3>
+                            </div>
+                            <div class="col-xs-4 text-right">
+                                <button type="button" class="btn-change btn btn-default">Change</button>
+                            </div>
+                        </div>
+                        <div class="toggled-content">
+                            <div class="row">
+                                <div class="col-lg-4 col-xs-6">
+                                    <div class="radio">
+                                        <label style="background: rgba(255, 255, 255, 1);">
+                                            <input type="radio" name="color4" value="rgba(255, 255, 255, 1)">white
+                                        </label>
+                                    </div>
+                                    <div class="radio">
+                                        <label style="background: rgba(240, 248, 255, 1);">
+                                            <input type="radio" name="color4" value="rgba(240, 248, 255, 1)">aliceblue
+                                        </label>
+                                    </div>
+                                    <div class="radio">
+                                        <label style="background: rgba(250, 235, 215, 1);">
+                                            <input type="radio" name="color4" value="rgba(250, 235, 215, 1)">antiquewhite
+                                        </label>
+                                    </div>
+                                    <div class="radio">
+                                        <label style="background: rgba(127, 255, 212, 1);">
+                                            <input type="radio" name="color4" value="rgba(127, 255, 212, 1)">aquamarine
+                                        </label>
+                                    </div>
+                                    <div class="radio">
+                                        <label style="background: rgba(255, 235, 205, 1);">
+                                            <input type="radio" name="color4" value="rgba(255, 235, 205, 1)">blanchedalmond
+                                        </label>
+                                    </div>
+                                </div>
+                                <div class="col-lg-4 col-xs-6">
+                                    <div class="radio">
+                                        <label style="background: rgba(108, 123, 139, 1);">
+                                            <input type="radio" name="color4" value="rgba(108, 123, 139, 1)">grey
+                                        </label>
+                                    </div>
+                                    <div class="radio">
+                                        <label style="background: rgba(95, 158, 160, 1);">
+                                            <input type="radio" name="color4" value="rgba(95, 158, 160, 1)">cadetblue
+                                        </label>
+                                    </div>
+                                    <div class="radio">
+                                        <label style="background: rgba(255, 127, 80, 1);">
+                                            <input type="radio" name="color4" value="rgba(255, 127, 80, 1)">coral
+                                        </label>
+                                    </div>
+                                    <div class="radio">
+                                        <label style="background: rgba(233, 150, 122, 1);">
+                                            <input type="radio" name="color4" value="rgba(233, 150, 122, 1)">darksalmon
+                                        </label>
+                                    </div>
+                                    <div class="radio">
+                                        <label style="background: rgba(0, 191, 255, 1);">
+                                            <input type="radio" name="color4" value="rgba(0, 191, 255, 1)">deepskyblue
+                                        </label>
+                                    </div>
+                                </div>
+                                <div class="col-lg-4 col-xs-6">
+                                    <div class="radio">
+                                        <label style="background: rgba(173, 255, 47, 1);">
+                                            <input type="radio" name="color4" value="rgba(173, 255, 47, 1)">greenyellow
+                                        </label>
+                                    </div>
+                                    <div class="radio">
+                                        <label style="background: rgba(144, 238, 144, 1);">
+                                            <input type="radio" name="color4" value="rgba(144, 238, 144, 1)">lightgreen
+                                        </label>
+                                    </div>
+                                    <div class="radio">
+                                        <label style="background: rgba(255, 228, 225, 1);">
+                                            <input type="radio" name="color4" value="rgba(255, 228, 225, 1)">mistyrose
+                                        </label>
+                                    </div>
+                                    <div class="radio">
+                                        <label style="background: rgba(147, 112, 219, 1);">
+                                            <input type="radio" name="color4" value="rgba(147, 112, 219, 1)">mediumpurple
+                                        </label>
+                                    </div>
+                                    <div class="radio">
+                                        <label style="background: rgba(0, 0, 0, 1);">
+                                            <input type="radio" name="color4" value="rgba(173, 255, 47, 1)">black
+                                        </label>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="well well-sm" style="margin-top: 24px; background: #fff; padding: 4px 8px;">
+                                <label>Shape:</label>
+                                <label class="radio-inline">
+                                    <input type="radio" name="shape1" id="shape1" value="square" checked="">square
+                                </label>
+                                <label class="radio-inline">
+                                    <input type="radio" name="shape1" id="shape2" value="round">round
+                                </label>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="form-group buttons">
+                        <div class="row">
+                            <div class="col-xs-8">
+                                <h3 style="margin-top: 0">'Get Offers' Button</h3>
+                            </div>
+                            <div class="col-xs-4 text-right">
+                                <button type="button" class="btn-change btn btn-default">Change</button>
+                            </div>
+                        </div>
+                        <div class="toggled-content">
+                            <div class="row">
+                                <div class="col-lg-4 col-xs-6">
+                                    <div class="radio">
+                                        <label style="background: rgba(255, 255, 255, 1);">
+                                            <input type="radio" name="color5" value="rgba(255, 255, 255, 1)">white
+                                        </label>
+                                    </div>
+                                    <div class="radio">
+                                        <label style="background: rgba(240, 248, 255, 1);">
+                                            <input type="radio" name="color5" value="rgba(240, 248, 255, 1)">aliceblue
+                                        </label>
+                                    </div>
+                                    <div class="radio">
+                                        <label style="background: rgba(250, 235, 215, 1);">
+                                            <input type="radio" name="color5" value="rgba(250, 235, 215, 1)">antiquewhite
+                                        </label>
+                                    </div>
+                                    <div class="radio">
+                                        <label style="background: rgba(127, 255, 212, 1);">
+                                            <input type="radio" name="color5" value="rgba(127, 255, 212, 1)">aquamarine
+                                        </label>
+                                    </div>
+                                    <div class="radio">
+                                        <label style="background: rgba(255, 235, 205, 1);">
+                                            <input type="radio" name="color5" value="rgba(255, 235, 205, 1)">blanchedalmond
+                                        </label>
+                                    </div>
+                                </div>
+                                <div class="col-lg-4 col-xs-6">
+                                    <div class="radio">
+                                        <label style="background: rgba(108, 123, 139, 1);">
+                                            <input type="radio" name="color5" value="rgba(108, 123, 139, 1)">grey
+                                        </label>
+                                    </div>
+                                    <div class="radio">
+                                        <label style="background: rgba(95, 158, 160, 1);">
+                                            <input type="radio" name="color5" value="rgba(95, 158, 160, 1)">cadetblue
+                                        </label>
+                                    </div>
+                                    <div class="radio">
+                                        <label style="background: rgba(255, 127, 80, 1);">
+                                            <input type="radio" name="color5" value="rgba(255, 127, 80, 1)">coral
+                                        </label>
+                                    </div>
+                                    <div class="radio">
+                                        <label style="background: rgba(233, 150, 122, 1);">
+                                            <input type="radio" name="color5" value="rgba(233, 150, 122, 1)">darksalmon
+                                        </label>
+                                    </div>
+                                    <div class="radio">
+                                        <label style="background: rgba(0, 191, 255, 1);">
+                                            <input type="radio" name="color5" value="rgba(0, 191, 255, 1)">deepskyblue
+                                        </label>
+                                    </div>
+                                </div>
+                                <div class="col-lg-4 col-xs-6">
+                                    <div class="radio">
+                                        <label style="background: rgba(173, 255, 47, 1);">
+                                            <input type="radio" name="color5" value="rgba(173, 255, 47, 1)">greenyellow
+                                        </label>
+                                    </div>
+                                    <div class="radio">
+                                        <label style="background: rgba(144, 238, 144, 1);">
+                                            <input type="radio" name="color5" value="rgba(144, 238, 144, 1)">lightgreen
+                                        </label>
+                                    </div>
+                                    <div class="radio">
+                                        <label style="background: rgba(255, 228, 225, 1);">
+                                            <input type="radio" name="color5" value="rgba(255, 228, 225, 1)">mistyrose
+                                        </label>
+                                    </div>
+                                    <div class="radio">
+                                        <label style="background: rgba(147, 112, 219, 1);">
+                                            <input type="radio" name="color5" value="rgba(147, 112, 219, 1)">mediumpurple
+                                        </label>
+                                    </div>
+                                    <div class="radio">
+                                        <label style="background: rgba(0, 0, 0, 1);">
+                                            <input type="radio" name="color5" value="rgba(173, 255, 47, 1)">black
+                                        </label>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="well well-sm" style="background: #fff; padding: 4px 8px;">
+                                <label>Size:</label>
+                                <label class="radio-inline">
+                                    <input type="radio" name="size1" id="size1" value="small">Small
+                                </label>
+                                <label class="radio-inline">
+                                    <input type="radio" name="size1" id="size2" value="normal" checked="">Normal
+                                </label>
+                                <label class="radio-inline">
+                                    <input type="radio" name="size1" id="size3" value="large">Large
+                                </label>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="form-group filters">
+                        <div class="row">
+                            <div class="col-xs-8">
+                                <h3 style="margin-top: 0">Filter Buttons</h3>
+                            </div>
+                            <div class="col-xs-4 text-right">
+                                <button type="button" class="btn-change btn btn-default">Change</button>
+                            </div>
+                        </div>
+                        <div class="toggled-content">
+                            <div class="row">
+                                <div class="col-lg-4 col-xs-6">
+                                    <div class="radio">
+                                        <label style="background: rgba(255, 255, 255, 1);">
+                                            <input type="radio" name="color6" value="rgba(255, 255, 255, 1)">white
+                                        </label>
+                                    </div>
+                                    <div class="radio">
+                                        <label style="background: rgba(240, 248, 255, 1);">
+                                            <input type="radio" name="color6" value="rgba(240, 248, 255, 1)">aliceblue
+                                        </label>
+                                    </div>
+                                    <div class="radio">
+                                        <label style="background: rgba(250, 235, 215, 1);">
+                                            <input type="radio" name="color6" value="rgba(250, 235, 215, 1)">antiquewhite
+                                        </label>
+                                    </div>
+                                    <div class="radio">
+                                        <label style="background: rgba(127, 255, 212, 1);">
+                                            <input type="radio" name="color6" value="rgba(127, 255, 212, 1)">aquamarine
+                                        </label>
+                                    </div>
+                                    <div class="radio">
+                                        <label style="background: rgba(255, 235, 205, 1);">
+                                            <input type="radio" name="color6" value="rgba(255, 235, 205, 1)">blanchedalmond
+                                        </label>
+                                    </div>
+                                </div>
+                                <div class="col-lg-4 col-xs-6">
+                                    <div class="radio">
+                                        <label style="background: rgba(108, 123, 139, 1);">
+                                            <input type="radio" name="color6" value="rgba(108, 123, 139, 1)">grey
+                                        </label>
+                                    </div>
+                                    <div class="radio">
+                                        <label style="background: rgba(95, 158, 160, 1);">
+                                            <input type="radio" name="color6" value="rgba(95, 158, 160, 1)">cadetblue
+                                        </label>
+                                    </div>
+                                    <div class="radio">
+                                        <label style="background: rgba(255, 127, 80, 1);">
+                                            <input type="radio" name="color6" value="rgba(255, 127, 80, 1)">coral
+                                        </label>
+                                    </div>
+                                    <div class="radio">
+                                        <label style="background: rgba(233, 150, 122, 1);">
+                                            <input type="radio" name="color6" value="rgba(233, 150, 122, 1)">darksalmon
+                                        </label>
+                                    </div>
+                                    <div class="radio">
+                                        <label style="background: rgba(0, 191, 255, 1);">
+                                            <input type="radio" name="color6" value="rgba(0, 191, 255, 1)">deepskyblue
+                                        </label>
+                                    </div>
+                                </div>
+                                <div class="col-lg-4 col-xs-6">
+                                    <div class="radio">
+                                        <label style="background: rgba(173, 255, 47, 1);">
+                                            <input type="radio" name="color6" value="rgba(173, 255, 47, 1)">greenyellow
+                                        </label>
+                                    </div>
+                                    <div class="radio">
+                                        <label style="background: rgba(144, 238, 144, 1);">
+                                            <input type="radio" name="color6" value="rgba(144, 238, 144, 1)">lightgreen
+                                        </label>
+                                    </div>
+                                    <div class="radio">
+                                        <label style="background: rgba(255, 228, 225, 1);">
+                                            <input type="radio" name="color6" value="rgba(255, 228, 225, 1)">mistyrose
+                                        </label>
+                                    </div>
+                                    <div class="radio">
+                                        <label style="background: rgba(147, 112, 219, 1);">
+                                            <input type="radio" name="color6" value="rgba(147, 112, 219, 1)">mediumpurple
+                                        </label>
+                                    </div>
+                                    <div class="radio">
+                                        <label style="background: rgba(0, 0, 0, 1);">
+                                            <input type="radio" name="color6" value="rgba(173, 255, 47, 1)">black
+                                        </label>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="well well-sm" style="background: #fff; padding: 4px 8px;">
+                                <label>Size:</label>
+                                <label class="radio-inline">
+                                    <input type="radio" name="size2" id="size21" value="small" checked="">Small
+                                </label>
+                                <label class="radio-inline">
+                                    <input type="radio" name="size2" id="size22" value="normal">Normal
+                                </label>
+                                <label class="radio-inline">
+                                    <input type="radio" name="size2" id="size23" value="large">Large
+                                </label>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="form-group categories">
+                        <div class="row">
+                            <div class="col-xs-12">
+                                <h3>Website Categories</h3>
+                            </div>
+                            <div class="col-xs-12">
+                                <select name="website_cats[]" class="cats-select form-control" multiple="multiple" style="display: none;">
+                                    <optgroup label="Electronics - Select All">
+                                        <option value="112">Mobile Phones</option>
+                                        <option value="114">Gadgets</option>
+                                        <option value="110">Computers</option>
+                                        <option value="109">Audio</option>
+                                        <option value="116">Digital Cameras</option>
+                                        <option value="115">TV &amp; Video</option>
+                                        <option value="113">Tablets</option>
+                                        <option value="111">Headphones</option>
+                                        <option value="117">Video Gaming</option>
+                                        <option value="119">Sale</option>
+                                    </optgroup>
+                                    <optgroup label="Kids - Select All">
+                                        <option value="85">Girls</option>
+                                        <option value="86">Boys</option>
+                                        <option value="91">Sale</option>
+                                        <option value="89">Toys &amp; Games</option>
+                                        <option value="87">Books</option>
+                                        <option value="84">Baby</option>
+                                        <option value="88">Furniture</option>
+                                    </optgroup>
+                                    <optgroup label="Home - Select All">
+                                        <option value="102">Pets</option>
+                                        <option value="97">Kitchen &amp; Dining</option>
+                                        <option value="106">Sale</option>
+                                        <option value="103">DIY &amp; Crafts</option>
+                                        <option value="96">Bed &amp; Bath</option>
+                                        <option value="101">Luggage</option>
+                                        <option value="98">Lighting</option>
+                                        <option value="94">Furniture</option>
+                                        <option value="100">Sporting Goods</option>
+                                        <option value="95">Decor</option>
+                                        <option value="99">Outdoor</option>
+                                        <option value="104">Office</option>
+                                    </optgroup>
+                                </select>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="form-group retailers-menu">
+                        <div class="row">
+                            <div class="col-xs-12">
+                                <h3>Website Retailers</h3>
+                            </div>
+                            <div class="col-xs-12">
+                                <select name="website_cats[]" class="retailers-select form-control" multiple="multiple" style="display: none;">
+                                    <optgroup>
+                                        <option>Groupon</option>
+                                        <option>TouchOfModern</option>
+                                        <option>Gilt</option>
+                                    </optgroup>
+                                </select>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col-xs-12">
+                            <button type="button" class="generate btn btn-primary btn-lg btn-block">Generate Widget</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="col-xs-12 col-md-8 preview col-lg-offset-1" style="margin-top: -15px;">
+            <div class="row">
+                <div class="col-xs-12 col-md-12">
+                    <h2>Preview:</h2>
+                    <div id="filters">
+                        <div class="row bottom-buffer top-buffer" style="margin: 0;">
+                            <div class="pull-left">
+                                <select id="categoriesFilter" multiple="multiple" style="display: none;">
+                                    <optgroup label="Women">
+                                        <option value="74">Handbags</option>
+                                        <option value="76">Jewelry</option>
+                                        <option value="77">Clothing</option>
+                                        <option value="78">Accessories</option>
+                                        <option value="79">Beauty</option>
+                                        <option value="75">Shoes</option>
+                                    </optgroup>
+                                    <optgroup label="Men">
+                                        <option value="69">Accessories</option>
+                                        <option value="68">Clothing</option>
+                                        <option value="66">Shoes</option>
+                                        <option value="67">Jewelry</option>
+                                    </optgroup>
+                                    <optgroup label="Home">
+                                        <option value="97">Kitchen &amp; Dining</option>
+                                        <option value="95">Decor</option>
+                                        <option value="96">Bed &amp; Bath</option>
+                                        <option value="104">Office</option>
+                                        <option value="94">Furniture</option>
+                                        <option value="98">Lighting</option>
+                                        <option value="101">Luggage</option>
+                                        <option value="102">Pets</option>
+                                        <option value="100">Sporting Goods</option>
+                                        <option value="99">Outdoor</option>
+                                        <option value="103">DIY &amp; Crafts</option>
+                                    </optgroup>
+                                    <optgroup label="Kids">
+                                        <option value="86">Boys</option>
+                                        <option value="89">Toys &amp; Games</option>
+                                        <option value="84">Baby</option>
+                                        <option value="88">Furniture</option>
+                                        <option value="85">Girls</option>
+                                        <option value="87">Books</option>
+                                    </optgroup>
+                                    <option value="electronics">Electronics</option>
+                                </select>
+                                <div class="btn-group">
+                                    <button type="button" class="filter-button multiselect dropdown-toggle btn btn-default" data-toggle="dropdown" title="Categories filter">
+                                        <span class="multiselect-selected-text">Categories filter</span> <b class="caret"></b></button>
+                                    <ul class="multiselect-container dropdown-menu" style="max-height: 300px; overflow-y: auto; overflow-x: hidden;">
+                                        <li class="multiselect-item multiselect-group multiselect-group-clickable">
+                                            <label>Women</label>
+                                        </li>
+                                        <li>
+                                            <a tabindex="0">
+                                                <label class="checkbox">
+                                                    <input type="checkbox" value="74"> Handbags</label>
+                                            </a>
+                                        </li>
+                                        <li>
+                                            <a tabindex="0">
+                                                <label class="checkbox">
+                                                    <input type="checkbox" value="76"> Jewelry</label>
+                                            </a>
+                                        </li>
+                                        <li>
+                                            <a tabindex="0">
+                                                <label class="checkbox">
+                                                    <input type="checkbox" value="77"> Clothing</label>
+                                            </a>
+                                        </li>
+                                        <li>
+                                            <a tabindex="0">
+                                                <label class="checkbox">
+                                                    <input type="checkbox" value="78"> Accessories</label>
+                                            </a>
+                                        </li>
+                                        <li>
+                                            <a tabindex="0">
+                                                <label class="checkbox">
+                                                    <input type="checkbox" value="79"> Beauty</label>
+                                            </a>
+                                        </li>
+                                        <li>
+                                            <a tabindex="0">
+                                                <label class="checkbox">
+                                                    <input type="checkbox" value="75"> Shoes</label>
+                                            </a>
+                                        </li>
+                                        <li class="multiselect-item multiselect-group multiselect-group-clickable">
+                                            <label>Men</label>
+                                        </li>
+                                        <li>
+                                            <a tabindex="0">
+                                                <label class="checkbox">
+                                                    <input type="checkbox" value="69"> Accessories</label>
+                                            </a>
+                                        </li>
+                                        <li>
+                                            <a tabindex="0">
+                                                <label class="checkbox">
+                                                    <input type="checkbox" value="68"> Clothing</label>
+                                            </a>
+                                        </li>
+                                        <li>
+                                            <a tabindex="0">
+                                                <label class="checkbox">
+                                                    <input type="checkbox" value="66"> Shoes</label>
+                                            </a>
+                                        </li>
+                                        <li>
+                                            <a tabindex="0">
+                                                <label class="checkbox">
+                                                    <input type="checkbox" value="67"> Jewelry</label>
+                                            </a>
+                                        </li>
+                                        <li class="multiselect-item multiselect-group multiselect-group-clickable">
+                                            <label>Home</label>
+                                        </li>
+                                        <li>
+                                            <a tabindex="0">
+                                                <label class="checkbox">
+                                                    <input type="checkbox" value="97"> Kitchen &amp; Dining</label>
+                                            </a>
+                                        </li>
+                                        <li>
+                                            <a tabindex="0">
+                                                <label class="checkbox">
+                                                    <input type="checkbox" value="95"> Decor</label>
+                                            </a>
+                                        </li>
+                                        <li>
+                                            <a tabindex="0">
+                                                <label class="checkbox">
+                                                    <input type="checkbox" value="96"> Bed &amp; Bath</label>
+                                            </a>
+                                        </li>
+                                        <li>
+                                            <a tabindex="0">
+                                                <label class="checkbox">
+                                                    <input type="checkbox" value="104"> Office</label>
+                                            </a>
+                                        </li>
+                                        <li>
+                                            <a tabindex="0">
+                                                <label class="checkbox">
+                                                    <input type="checkbox" value="94"> Furniture</label>
+                                            </a>
+                                        </li>
+                                        <li>
+                                            <a tabindex="0">
+                                                <label class="checkbox">
+                                                    <input type="checkbox" value="98"> Lighting</label>
+                                            </a>
+                                        </li>
+                                        <li>
+                                            <a tabindex="0">
+                                                <label class="checkbox">
+                                                    <input type="checkbox" value="101"> Luggage</label>
+                                            </a>
+                                        </li>
+                                        <li>
+                                            <a tabindex="0">
+                                                <label class="checkbox">
+                                                    <input type="checkbox" value="102"> Pets</label>
+                                            </a>
+                                        </li>
+                                        <li>
+                                            <a tabindex="0">
+                                                <label class="checkbox">
+                                                    <input type="checkbox" value="100"> Sporting Goods</label>
+                                            </a>
+                                        </li>
+                                        <li>
+                                            <a tabindex="0">
+                                                <label class="checkbox">
+                                                    <input type="checkbox" value="99"> Outdoor</label>
+                                            </a>
+                                        </li>
+                                        <li>
+                                            <a tabindex="0">
+                                                <label class="checkbox">
+                                                    <input type="checkbox" value="103"> DIY &amp; Crafts</label>
+                                            </a>
+                                        </li>
+                                        <li class="multiselect-item multiselect-group multiselect-group-clickable">
+                                            <label>Kids</label>
+                                        </li>
+                                        <li>
+                                            <a tabindex="0">
+                                                <label class="checkbox">
+                                                    <input type="checkbox" value="86"> Boys</label>
+                                            </a>
+                                        </li>
+                                        <li>
+                                            <a tabindex="0">
+                                                <label class="checkbox">
+                                                    <input type="checkbox" value="89"> Toys &amp; Games</label>
+                                            </a>
+                                        </li>
+                                        <li>
+                                            <a tabindex="0">
+                                                <label class="checkbox">
+                                                    <input type="checkbox" value="84"> Baby</label>
+                                            </a>
+                                        </li>
+                                        <li>
+                                            <a tabindex="0">
+                                                <label class="checkbox">
+                                                    <input type="checkbox" value="88"> Furniture</label>
+                                            </a>
+                                        </li>
+                                        <li>
+                                            <a tabindex="0">
+                                                <label class="checkbox">
+                                                    <input type="checkbox" value="85"> Girls</label>
+                                            </a>
+                                        </li>
+                                        <li>
+                                            <a tabindex="0">
+                                                <label class="checkbox">
+                                                    <input type="checkbox" value="87"> Books</label>
+                                            </a>
+                                        </li>
+                                        <li class="disabled">
+                                            <a tabindex="0">
+                                                <label class="checkbox">
+                                                    <input type="checkbox" value="electronics" disabled=""> Electronics</label>
+                                            </a>
+                                        </li>
+                                    </ul>
+                                </div>
+                                <select id="hostsFilter" multiple="multiple" style="display: none;">
+                                    <option value="6pm">6PM</option>
+                                    <option value="amuze">AMUZE</option>
+                                    <option value="belleandclive">Belle &amp; Clive</option>
+                                    <option value="beyondtherack">BEYONDTHERACK</option>
+                                    <option value="blitsy">blitsy</option>
+                                    <option value="choxi">choxi</option>
+                                    <option value="dapperman">DapperMan</option>
+                                    <option value="gilt">Gilt</option>
+                                    <option value="groupon">GROUPON</option>
+                                    <option value="hautelook">HauteLook</option>
+                                    <option value="ideel">ideel</option>
+                                    <option value="jackthreads">Jackthreads</option>
+                                    <option value="jossandmain">Joss and Main</option>
+                                    <option value="leftlanesports">LeftLaneSports</option>
+                                    <option value="myhabit">MYHABIT</option>
+                                    <option value="onekingslane">One Kings Lane</option>
+                                    <option value="plndr">PLNDR</option>
+                                    <option value="ruelala">Rue La La</option>
+                                    <option value="seshday">seshday</option>
+                                    <option value="sportpursuit">SPORTPURSUIT</option>
+                                    <option value="theclymb">The Clymb</option>
+                                    <option value="touchofmodern">Touch of Modern</option>
+                                    <option value="wayfair">wayfair</option>
+                                    <option value="whiskeymilitia">WHISKEY MILITIA</option>
+                                    <option value="woot">Woot!</option>
+                                    <option value="zulily">Zulily</option>
+                                </select>
+                                <div class="btn-group">
+                                    <button type="button" class="filter-button multiselect dropdown-toggle btn btn-default" data-toggle="dropdown" title="Retailers filter"><span class="multiselect-selected-text">Retailers filter</span> <b class="caret"></b></button>
+                                    <ul class="multiselect-container dropdown-menu" style="max-height: 300px; overflow-y: auto; overflow-x: hidden;">
+                                        <li>
+                                            <a tabindex="0">
+                                                <label class="checkbox">
+                                                    <input type="checkbox" value="6pm"> 6PM</label>
+                                            </a>
+                                        </li>
+                                        <li>
+                                            <a tabindex="0">
+                                                <label class="checkbox">
+                                                    <input type="checkbox" value="amuze"> AMUZE</label>
+                                            </a>
+                                        </li>
+                                        <li>
+                                            <a tabindex="0">
+                                                <label class="checkbox">
+                                                    <input type="checkbox" value="belleandclive"> Belle &amp; Clive</label>
+                                            </a>
+                                        </li>
+                                        <li>
+                                            <a tabindex="0">
+                                                <label class="checkbox">
+                                                    <input type="checkbox" value="beyondtherack"> BEYONDTHERACK</label>
+                                            </a>
+                                        </li>
+                                        <li>
+                                            <a tabindex="0">
+                                                <label class="checkbox">
+                                                    <input type="checkbox" value="blitsy"> blitsy</label>
+                                            </a>
+                                        </li>
+                                        <li>
+                                            <a tabindex="0">
+                                                <label class="checkbox">
+                                                    <input type="checkbox" value="choxi"> choxi</label>
+                                            </a>
+                                        </li>
+                                        <li>
+                                            <a tabindex="0">
+                                                <label class="checkbox">
+                                                    <input type="checkbox" value="dapperman"> DapperMan</label>
+                                            </a>
+                                        </li>
+                                        <li>
+                                            <a tabindex="0">
+                                                <label class="checkbox">
+                                                    <input type="checkbox" value="gilt"> Gilt</label>
+                                            </a>
+                                        </li>
+                                        <li>
+                                            <a tabindex="0">
+                                                <label class="checkbox">
+                                                    <input type="checkbox" value="groupon"> GROUPON</label>
+                                            </a>
+                                        </li>
+                                        <li>
+                                            <a tabindex="0">
+                                                <label class="checkbox">
+                                                    <input type="checkbox" value="hautelook"> HauteLook</label>
+                                            </a>
+                                        </li>
+                                        <li>
+                                            <a tabindex="0">
+                                                <label class="checkbox">
+                                                    <input type="checkbox" value="ideel"> ideel</label>
+                                            </a>
+                                        </li>
+                                        <li>
+                                            <a tabindex="0">
+                                                <label class="checkbox">
+                                                    <input type="checkbox" value="jackthreads"> Jackthreads</label>
+                                            </a>
+                                        </li>
+                                        <li>
+                                            <a tabindex="0">
+                                                <label class="checkbox">
+                                                    <input type="checkbox" value="jossandmain"> Joss and Main</label>
+                                            </a>
+                                        </li>
+                                        <li>
+                                            <a tabindex="0">
+                                                <label class="checkbox">
+                                                    <input type="checkbox" value="leftlanesports"> LeftLaneSports</label>
+                                            </a>
+                                        </li>
+                                        <li>
+                                            <a tabindex="0">
+                                                <label class="checkbox">
+                                                    <input type="checkbox" value="myhabit"> MYHABIT</label>
+                                            </a>
+                                        </li>
+                                        <li>
+                                            <a tabindex="0">
+                                                <label class="checkbox">
+                                                    <input type="checkbox" value="onekingslane"> One Kings Lane</label>
+                                            </a>
+                                        </li>
+                                        <li>
+                                            <a tabindex="0">
+                                                <label class="checkbox">
+                                                    <input type="checkbox" value="plndr"> PLNDR</label>
+                                            </a>
+                                        </li>
+                                        <li>
+                                            <a tabindex="0">
+                                                <label class="checkbox">
+                                                    <input type="checkbox" value="ruelala"> Rue La La</label>
+                                            </a>
+                                        </li>
+                                        <li>
+                                            <a tabindex="0">
+                                                <label class="checkbox">
+                                                    <input type="checkbox" value="seshday"> seshday</label>
+                                            </a>
+                                        </li>
+                                        <li>
+                                            <a tabindex="0">
+                                                <label class="checkbox">
+                                                    <input type="checkbox" value="sportpursuit"> SPORTPURSUIT</label>
+                                            </a>
+                                        </li>
+                                        <li>
+                                            <a tabindex="0">
+                                                <label class="checkbox">
+                                                    <input type="checkbox" value="theclymb"> The Clymb</label>
+                                            </a>
+                                        </li>
+                                        <li>
+                                            <a tabindex="0">
+                                                <label class="checkbox">
+                                                    <input type="checkbox" value="touchofmodern"> Touch of Modern</label>
+                                            </a>
+                                        </li>
+                                        <li>
+                                            <a tabindex="0">
+                                                <label class="checkbox">
+                                                    <input type="checkbox" value="wayfair"> wayfair</label>
+                                            </a>
+                                        </li>
+                                        <li>
+                                            <a tabindex="0">
+                                                <label class="checkbox">
+                                                    <input type="checkbox" value="whiskeymilitia"> WHISKEY MILITIA</label>
+                                            </a>
+                                        </li>
+                                        <li>
+                                            <a tabindex="0">
+                                                <label class="checkbox">
+                                                    <input type="checkbox" value="woot"> Woot!</label>
+                                            </a>
+                                        </li>
+                                        <li>
+                                            <a tabindex="0">
+                                                <label class="checkbox">
+                                                    <input type="checkbox" value="zulily"> Zulily</label>
+                                            </a>
+                                        </li>
+                                    </ul>
+                                </div>
+                            </div>
+                            <div class="pull-right dropdown">
+                                <button class="filter-button btn btn-default dropdown-toggle" type="button" id="dropdownMenu1" data-toggle="dropdown" aria-haspopup="true" aria-expanded="true">
+                                    Sort
+                                    <span class="caret"></span>
+                                </button>
+                                <ul class="dropdown-menu widget-sort" aria-labelledby="dropdownMenu1">
+                                    <li><a href="javascript:;" data-order="discount_percent" data-dir="desc">Discount: high-low</a></li>
+                                    <li><a href="javascript:;" data-order="discount_percent" data-dir="asc">Discount: low-high</a></li>
+                                    <li><a href="javascript:;" data-order="end_date" data-dir="asc">Ending Soon</a></li>
+                                    <li><a href="javascript:;" data-order="end_date" data-dir="desc">Ending Last</a></li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="row">
+                <div class="col-md-4 col-sm-6 col-xs-12">
+                    <div class="productbox">
+                        <div class="imgthumb img-responsive">
+                            <img src="http://thestore.com/pics/unsafe/trim/full-fit-in/295x295/filters:fill(white):no_upscale()/http://thestore.com/media/placeholder/placeholder.jpg">
+                        </div>
+                        <div class="caption widget-caption">
+                            <h5>Home / Pets Sales Up To 44% off</h5>
+                            <div class="sub_caption widget-subcaption">
+                                <a href="http://thestore.com/retailer/groupon">
+                                    <img src="http://thestore.com/media/host/groupon.png">
+                                </a> <b>Hosted</b> <small>by</small> <a href="http://thestore.com/retailer/groupon"><b>GROUPON</b></a>
+                                <span class="time-counter">Ends 18 days</span>
+                            </div>
+                            <p>
+                                <a href="http://thestore.com/event/home-pets-sales-up-to-44-off-1747499" role="button" class="btn btn-success btn-md btn-block widget-offer-button">Get Offers</a>
+                            </p>
+                        </div>
+                        <div class="saleoffrate caption-small">
+                            <b>44%</b>
+                            <br>OFF
+                        </div>
+                    </div>
+                </div>
+                <div class="col-lg-4 col-md-4 col-sm-6 col-xs-12">
+                    <div class="productbox">
+                        <div class="imgthumb img-responsive">
+                            <img src="http://thestore.com/pics/unsafe/trim/full-fit-in/295x295/filters:fill(white):no_upscale()/http://thestore.com/media/placeholder/placeholder.jpg">
+                        </div>
+                        <div class="caption widget-caption">
+                            <h5>Women / Handbags Sales Up To 88% off</h5>
+                            <div class="sub_caption widget-subcaption">
+                                <a href="http://thestore.com/retailer/groupon">
+                                    <img src="http://thestore.com/media/host/groupon.png">
+                                </a> <b>Hosted</b> <small>by</small> <a href="http://thestore.com/retailer/groupon"><b>GROUPON</b></a>
+                                <span class="time-counter">Ends 18 days</span>
+                            </div>
+                            <p>
+                                <a href="http://thestore.com/event/women-handbags-sales-up-to-88-off-1747498" role="button" class="btn btn-success btn-md btn-block widget-offer-button">Get Offers</a>
+                            </p>
+                        </div>
+                        <div class="saleoffrate caption-small">
+                            <b>88%</b>
+                            <br>OFF
+                        </div>
+                    </div>
+                </div>
+                <div class="col-lg-4 col-md-4 col-sm-6 col-xs-12">
+                    <div class="productbox">
+                        <div class="imgthumb img-responsive">
+                            <img src="http://thestore.com/pics/unsafe/trim/full-fit-in/295x295/filters:fill(white):no_upscale()/http://thestore.com/media/placeholder/placeholder.jpg">
+                        </div>
+                        <div class="caption widget-caption">
+                            <h5>Electronics / Audio Sales Up To 83% off</h5>
+                            <div class="sub_caption widget-subcaption">
+                                <a href="http://thestore.com/retailer/groupon">
+                                    <img src="http://thestore.com/media/host/groupon.png">
+                                </a> <b>Hosted</b> <small>by</small> <a href="http://thestore.com/retailer/groupon"><b>GROUPON</b></a>
+                                <span class="time-counter">Ends 18 days</span>
+                            </div>
+                            <p>
+                                <a href="http://thestore.com/event/electronics-audio-sales-up-to-83-off-1747494" role="button" class="btn btn-success btn-md btn-block widget-offer-button">Get Offers</a>
+                            </p>
+                        </div>
+                        <div class="saleoffrate caption-small">
+                            <b>83%</b>
+                            <br>OFF
+                        </div>
+                    </div>
+                </div>
+                <div class="col-lg-4 col-md-4 col-sm-6 col-xs-12">
+                    <div class="productbox">
+                        <div class="imgthumb img-responsive">
+                            <img src="http://thestore.com/pics/unsafe/trim/full-fit-in/295x295/filters:fill(white):no_upscale()/http://thestore.com/media/placeholder/placeholder.jpg">
+                        </div>
+                        <div class="caption widget-caption">
+                            <h5>Home / Outdoor Sales Up To 57% off</h5>
+                            <div class="sub_caption widget-subcaption">
+                                <a href="http://thestore.com/retailer/groupon">
+                                    <img src="http://thestore.com/media/host/groupon.png">
+                                </a> <b>Hosted</b> <small>by</small> <a href="http://thestore.com/retailer/groupon"><b>GROUPON</b></a>
+                                <span class="time-counter">Ends 18 days</span>
+                            </div>
+                            <p>
+                                <a href="http://thestore.com/event/home-outdoor-sales-up-to-57-off-1747492" role="button" class="btn btn-success btn-md btn-block widget-offer-button">Get Offers</a>
+                            </p>
+                        </div>
+                        <div class="saleoffrate caption-small">
+                            <b>57%</b>
+                            <br>OFF
+                        </div>
+                    </div>
+                </div>
+                <div class="col-lg-4 col-md-4 col-sm-6 col-xs-12">
+                    <div class="productbox">
+                        <div class="imgthumb img-responsive">
+                            <img src="http://thestore.com/pics/unsafe/trim/full-fit-in/295x295/filters:fill(white):no_upscale()/http://thestore.com/media/placeholder/placeholder.jpg">
+                        </div>
+                        <div class="caption widget-caption">
+                            <h5>Home / Decor Sales Up To 68% off</h5>
+                            <div class="sub_caption widget-subcaption">
+                                <a href="http://thestore.com/retailer/groupon">
+                                    <img src="http://thestore.com/media/host/groupon.png">
+                                </a> <b>Hosted</b> <small>by</small> <a href="http://thestore.com/retailer/groupon"><b>GROUPON</b></a>
+                                <span class="time-counter">Ends 18 days</span>
+                            </div>
+                            <p>
+                                <a href="http://thestore.com/event/home-decor-sales-up-to-68-off-1747491" role="button" class="btn btn-success btn-md btn-block widget-offer-button">Get Offers</a>
+                            </p>
+                        </div>
+                        <div class="saleoffrate caption-small">
+                            <b>68%</b>
+                            <br>OFF
+                        </div>
+                    </div>
+                </div>
+                <div class="col-lg-4 col-md-4 col-sm-6 col-xs-12">
+                    <div class="productbox">
+                        <div class="imgthumb img-responsive">
+                            <img src="http://thestore.com/pics/unsafe/trim/full-fit-in/295x295/filters:fill(white):no_upscale()/http://thestore.com/media/placeholder/placeholder.jpg">
+                        </div>
+                        <div class="caption widget-caption">
+                            <h5>Electronics / Audio Sales Up To 83% off</h5>
+                            <div class="sub_caption widget-subcaption">
+                                <a href="http://thestore.com/retailer/groupon">
+                                    <img src="http://thestore.com/media/host/groupon.png">
+                                </a> <b>Hosted</b> <small>by</small> <a href="http://thestore.com/retailer/groupon"><b>GROUPON</b></a>
+                                <span class="time-counter">Ends 18 days</span>
+                            </div>
+                            <p>
+                                <a href="http://thestore.com/event/electronics-audio-sales-up-to-83-off-1747494" role="button" class="btn btn-success btn-md btn-block widget-offer-button">Get Offers</a>
+                            </p>
+                        </div>
+                        <div class="saleoffrate caption-small">
+                            <b>83%</b>
+                            <br>OFF
+                        </div>
+                    </div>
+                </div>
+                <div class="col-lg-4 col-md-4 col-sm-6 col-xs-12">
+                    <div class="productbox">
+                        <div class="imgthumb img-responsive">
+                            <img src="http://thestore.com/pics/unsafe/trim/full-fit-in/295x295/filters:fill(white):no_upscale()/http://thestore.com/media/placeholder/placeholder.jpg">
+                        </div>
+                        <div class="caption widget-caption">
+                            <h5>Women / Handbags Sales Up To 88% off</h5>
+                            <div class="sub_caption widget-subcaption">
+                                <a href="http://thestore.com/retailer/groupon">
+                                    <img src="http://thestore.com/media/host/groupon.png">
+                                </a> <b>Hosted</b> <small>by</small> <a href="http://thestore.com/retailer/groupon"><b>GROUPON</b></a>
+                                <span class="time-counter">Ends 18 days</span>
+                            </div>
+                            <p>
+                                <a href="http://thestore.com/event/women-handbags-sales-up-to-88-off-1747498" role="button" class="btn btn-success btn-md btn-block widget-offer-button">Get Offers</a>
+                            </p>
+                        </div>
+                        <div class="saleoffrate caption-small">
+                            <b>88%</b>
+                            <br>OFF
+                        </div>
+                    </div>
+                </div>
+                <div class="col-lg-4 col-md-4 col-sm-6 col-xs-12">
+                    <div class="productbox">
+                        <div class="imgthumb img-responsive">
+                            <img src="http://thestore.com/pics/unsafe/trim/full-fit-in/295x295/filters:fill(white):no_upscale()/http://thestore.com/media/placeholder/placeholder.jpg">
+                        </div>
+                        <div class="caption widget-caption">
+                            <h5>Home / Outdoor Sales Up To 57% off</h5>
+                            <div class="sub_caption widget-subcaption">
+                                <a href="http://thestore.com/retailer/groupon">
+                                    <img src="http://thestore.com/media/host/groupon.png">
+                                </a> <b>Hosted</b> <small>by</small> <a href="http://thestore.com/retailer/groupon"><b>GROUPON</b></a>
+                                <span class="time-counter">Ends 18 days</span>
+                            </div>
+                            <p>
+                                <a href="http://thestore.com/event/home-outdoor-sales-up-to-57-off-1747492" role="button" class="btn btn-success btn-md btn-block widget-offer-button">Get Offers</a>
+                            </p>
+                        </div>
+                        <div class="saleoffrate caption-small">
+                            <b>57%</b>
+                            <br>OFF
+                        </div>
+                    </div>
+                </div>
+                <div class="col-lg-4 col-md-4 col-sm-6 col-xs-12">
+                    <div class="productbox">
+                        <div class="imgthumb img-responsive">
+                            <img src="http://thestore.com/pics/unsafe/trim/full-fit-in/295x295/filters:fill(white):no_upscale()/http://thestore.com/media/placeholder/placeholder.jpg">
+                        </div>
+                        <div class="caption widget-caption">
+                            <h5>Home / Decor Sales Up To 68% off</h5>
+                            <div class="sub_caption widget-subcaption">
+                                <a href="http://thestore.com/retailer/groupon">
+                                    <img src="http://thestore.com/media/host/groupon.png">
+                                </a> <b>Hosted</b> <small>by</small> <a href="http://thestore.com/retailer/groupon"><b>GROUPON</b></a>
+                                <span class="time-counter">Ends 18 days</span>
+                            </div>
+                            <p>
+                                <a href="http://thestore.com/event/home-decor-sales-up-to-68-off-1747491" role="button" class="btn btn-success btn-md btn-block widget-offer-button">Get Offers</a>
+                            </p>
+                        </div>
+                        <div class="saleoffrate caption-small">
+                            <b>68%</b>
+                            <br>OFF
+                        </div>
+                    </div>
+                </div>
+            </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <script src="jquery.js"></script>
+    <script type="text/javascript" src="http://affiliate.thestoreinternal.com/js/plugins/bootstrap/bootstrap.min.js"></script>
+    <script type="text/javascript" src="http://affiliate.thestoreinternal.com/js/plugins/bootstrap/bootstrap-multiselect.js"></script>
+    <script src="custom.js"></script>
+</body>
+
+</html>

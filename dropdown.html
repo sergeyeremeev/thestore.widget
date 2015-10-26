@@ -1,0 +1,160 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content="">
+    <meta name="author" content="">
+
+    <title>form</title>
+
+    <!-- Bootstrap Core CSS -->
+    <link href="bower_components/bootstrap/dist/css/bootstrap.min.css" rel="stylesheet">
+
+    <!-- MetisMenu CSS -->
+    <link href="bower_components/metisMenu/dist/metisMenu.min.css" rel="stylesheet">
+
+    <!-- Timeline CSS -->
+    <link href="dist/css/timeline.css" rel="stylesheet">
+
+    <!-- Custom CSS -->
+    <link href="dist/css/sb-admin-2.css" rel="stylesheet">
+    <link href="custom.css" rel="stylesheet">
+
+    <!-- Morris Charts CSS -->
+    <link href="bower_components/morrisjs/morris.css" rel="stylesheet">
+
+    <!-- Custom Fonts -->
+    <link href="bower_components/font-awesome/css/font-awesome.min.css" rel="stylesheet" type="text/css">
+
+    <link rel="stylesheet" type="text/css" href="http://affiliate.thestoreinternal.com/css/plugins/bootstrap/bootstrap-multiselect.css">
+
+    <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
+    <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
+    <!--[if lt IE 9]>
+            <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
+            <script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
+        <![endif]-->
+
+</head>
+
+<body>
+    <div class="container">
+        <div class="row" style="margin: 0 !important;">
+            <div class="col-md-10 col-md-offset-1 col-lg-8 col-lg-offset-2">
+                <div class="row">
+                    <div class="col-md-10 col-md-offset-1 col-lg-10 col-lg-offset-1">
+                        <form action="" class="form-horizontal decreased-padding">
+                            <div class="panel panel-default">
+                                <div class="panel-heading">
+                                    Website Information
+                                </div>
+                                <div class="panel-body">
+                                    <div class="tab-content">
+
+                                        <div class="form-group">
+                                            <label for="website_name" class="col-sm-3 control-label">Website name</label>
+                                            <div class="col-sm-9">
+                                                <input type="text" id="website_name" name="website_name" class="form-control" placeholder="ABC Shopping Mall Official Website">
+
+
+                                            </div>
+                                        </div>
+                                        <div class="form-group">
+                                            <label for="website" class="col-sm-3 control-label">Website</label>
+                                            <div class="col-sm-9">
+                                                <input type="text" id="website" name="website" class="form-control" placeholder="http://www.mycompany.com/">
+
+
+                                            </div>
+                                        </div>
+
+
+
+                                        <div class="form-group">
+                                            <label for="website_desc" class="col-sm-3 control-label">Website description</label>
+                                            <div class="col-sm-9">
+                                                <textarea id="website_desc" name="website_desc" class="form-control" placeholder="Some words about Your Site"></textarea>
+
+
+                                            </div>
+                                        </div>
+
+
+
+                                        <div class="form-group">
+                                            <label for="website_cats[]" class="col-sm-3 control-label">Website categories</label>
+                                            <div class="col-sm-9">
+                                                <select name="website_cats[]" class="cats-select form-control" multiple="multiple" style="display: none;">
+                                                    <optgroup label="Electronics - Select All">
+                                                        <option value="112">Mobile Phones</option>
+                                                        <option value="114">Gadgets</option>
+                                                        <option value="110">Computers</option>
+                                                        <option value="109">Audio</option>
+                                                        <option value="116">Digital Cameras</option>
+                                                        <option value="115">TV &amp; Video</option>
+                                                        <option value="113">Tablets</option>
+                                                        <option value="111">Headphones</option>
+                                                        <option value="117">Video Gaming</option>
+                                                        <option value="119">Sale</option>
+                                                    </optgroup>
+                                                    <optgroup label="Kids - Select All">
+                                                        <option value="85">Girls</option>
+                                                        <option value="86">Boys</option>
+                                                        <option value="91">Sale</option>
+                                                        <option value="89">Toys &amp; Games</option>
+                                                        <option value="87">Books</option>
+                                                        <option value="84">Baby</option>
+                                                        <option value="88">Furniture</option>
+                                                    </optgroup>
+                                                    <optgroup label="Home - Select All">
+                                                        <option value="102">Pets</option>
+                                                        <option value="97">Kitchen &amp; Dining</option>
+                                                        <option value="106">Sale</option>
+                                                        <option value="103">DIY &amp; Crafts</option>
+                                                        <option value="96">Bed &amp; Bath</option>
+                                                        <option value="101">Luggage</option>
+                                                        <option value="98">Lighting</option>
+                                                        <option value="94">Furniture</option>
+                                                        <option value="100">Sporting Goods</option>
+                                                        <option value="95">Decor</option>
+                                                        <option value="99">Outdoor</option>
+                                                        <option value="104">Office</option>
+                                                    </optgroup>
+                                                </select>
+
+
+
+                                            </div>
+                                        </div>
+
+
+
+                                        <div class="form-group">
+                                            <label for="logo" class="col-sm-3 control-label">Company Logo</label>
+                                            <div class="col-sm-9">
+                                                <input type="file" id="myLogo" name="logo">
+
+
+                                            </div>
+                                        </div>
+
+                                    </div>
+                                </div>
+                            </div>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <script src="jquery.js"></script>
+    <script type="text/javascript" src="http://affiliate.thestoreinternal.com/js/plugins/bootstrap/bootstrap.min.js"></script>
+    <script type="text/javascript" src="http://affiliate.thestoreinternal.com/js/plugins/bootstrap/bootstrap-multiselect.js"></script>
+    <script src="custom.js"></script>
+</body>
+
+</html>

@@ -1,0 +1,45 @@
+body {
+    background: #fff;
+}
+
+.widget-caption h5 {
+    color: #fff;
+    font-size: 14px;
+}
+
+.widget-subcaption b,
+.widget-subcaption small,
+.widget-subcaption a {
+    color: #fff;
+}
+
+.widget-subcaption b,
+.widget-subcaption small {
+    font-size: 11px;
+}
+
+.widget-caption {
+    background: rgba(0,0,0,0.7);
+    border-radius: 0;
+}
+
+.caption-small {
+    background: rgba(0,0,0,0.7);
+}
+
+.widget-offer-button {
+    background: #5cb85c;
+    border: 1px solid #4cae4c;
+    margin: 5px auto 0;
+    height: 34px;
+    line-height: 20px;
+    font-size: 14px;
+}
+
+.filter-button {
+    background: #fff;
+    width: 138px;
+    height: 34px;
+    line-height: 20px;
+    font-size: 14px;
+}

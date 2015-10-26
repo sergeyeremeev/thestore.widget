@@ -1,0 +1,19 @@
+.productbox {
+    width: 297px !important;
+    height: 297px !important;
+    overflow: hidden;
+}
+
+.imgthumb {
+    border-radius: 4px;
+}
+
+.imgthumb img {
+    width: 100% !important;
+}
+
+.caption h5 {
+    text-overflow: ellipsis;
+    white-space: nowrap;
+    overflow: hidden;
+}

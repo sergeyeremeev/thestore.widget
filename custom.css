@@ -1,0 +1,36 @@
+@media (min-width: 768px) {
+    .decreased-padding .form-group > label {
+        padding: 0 5px !important;
+    }
+}
+
+.cats-dropdown {
+    position: relative !important;
+    width: 100% !important;
+    font-size: 12px;
+    line-height: 1;
+    top: -35px;
+    left: -1px;
+    margin-bottom: -35px !important;
+}
+
+.cats-dropdown li a label,
+.cats-dropdown li.multiselect-item label {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: -webkit-flex;
+    display: flex;
+    -webkit-box-align: center;
+    -webkit-flex-align: center;
+    -ms-flex-align: center;
+    -webkit-align-items: center;
+    align-items: center;
+    padding: 0px 20px 0px 40px !important;
+    min-height: 20px !important;
+}
+
+.cats-dropdown li.multiselect-item label {
+    padding-left: 20px !important;
+    font-size: 14px;
+    text-decoration: underline;
+}
